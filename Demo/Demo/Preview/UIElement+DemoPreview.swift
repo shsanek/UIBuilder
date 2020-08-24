@@ -12,24 +12,20 @@ import UIBuilder
 internal struct TextInput: IUIElement
 {
 
-    @UIState var active: Bool = false
+    @UIState var tap: Bool = false
 
     internal var body: UIBody {
         UIBody {
             BContainer {
-                BStack {
-                    BTextField()
-                        .placeholder("input")
-                        .height(44)
-                        .updateTextHandler { (text) in
-                            self.active = (text?.count != 0)
-                        }
-                    BView().height(8.0)
-                    BView()
-                        .height(4.0)
-                        .backgroundColor(self.active ? .green : .red)
+                BControl { (isTap) in
+                    BContainer {
+                        BLabel(self.tap ? "тапнуто" : "не тапнуто")
+                            .offset(top: 8, bottom: 8, left: 8, right: 8)
+                    }
+                    .offset()
+                    .backgroundColor(isTap ? .lightGray: .clear)
                 }
-                .setAxis(.vertical)
+                .setAction({ self.tap.toggle() })
                 .freeOffset(top: 0, left: 0, right: 0)
             }
             .backgroundColor(.white)
