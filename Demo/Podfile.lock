@@ -1,0 +1,16 @@
+PODS:
+  - UIBuilder (1.0.0)
+
+DEPENDENCIES:
+  - UIBuilder (from `../`)
+
+EXTERNAL SOURCES:
+  UIBuilder:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIBuilder: 751b9e44c6f54f2152ffe0442ca8bcd50cd041ac
+
+PODFILE CHECKSUM: 9db329ee37d7fc58ef04a828f7972231d09bfd9c
+
+COCOAPODS: 1.8.4
