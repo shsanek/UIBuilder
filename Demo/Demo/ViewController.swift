@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import UIBuilder
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private let controller = UIController(element: TextInput())
+
+    override func loadView() {
+        self.view = self.controller.makeView()
+        controller.setView(self.view)
     }
 
-
 }
-
